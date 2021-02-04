@@ -26,7 +26,7 @@ Vue.use(ElementUI, {
 Vue.prototype.$axios = axios;
 
 const i18n = new VueI18n({
-    locale: 'zh',
+    locale: 'en',
     messages
 })
 

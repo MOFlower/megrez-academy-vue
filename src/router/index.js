@@ -7,28 +7,13 @@ export default new Router({
     routes: [
         {
             path: '/',
-            redirect: '/login'
+            redirect: '/introduction'
         },
         {
             path: '/',
             component: resolve => require(['../components/common/Home.vue'], resolve),
             meta: { title: '自述文件' },
-            children:[
-                {
-                    path: '/dashboard',
-                    component: resolve => require(['../components/page/Dashboard.vue'], resolve),
-                    meta: { title: '系统首页' }
-                },
-                {
-                    path: '/home',
-                    component: resolve => require(['../components/page/Dashboard.vue'], resolve),
-                    meta: { title: '系统首页' }
-                },
-                {
-                    path: '/icon',
-                    component: resolve => require(['../components/page/Icon.vue'], resolve),
-                    meta: { title: '自定义图标' }
-                },
+            children: [
                 {
                     path: '/table',
                     component: resolve => require(['../components/page/BaseTable.vue'], resolve),
@@ -153,17 +138,25 @@ export default new Router({
                     meta: { title: 'My profile' }
 
                 },
+
             ]
+        },
+        /**
+         * webpage
+         */
+        {
+            path: '/introduction',
+            component: resolve => require(['../components/webpage/Introduction.vue'], resolve),
         },
         {
             path: '/login',
             component: resolve => require(['../components/page/Login.vue'], resolve)
         },
-
         {
             path: '*',
             redirect: '/404'
         }
+
     ],
-    mode:'history',
+    mode: 'history',
 })

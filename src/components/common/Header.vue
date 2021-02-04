@@ -4,7 +4,7 @@
         <div class="collapse-btn" @click="collapseChage">
             <i class="el-icon-menu"></i>
         </div>
-        <div class="logo">Megrez-academy</div>
+        <div class="logo">MYE Foundation</div>
         <div class="header-right">
             <div class="header-user-con">
                 <!-- 全屏显示 -->
@@ -22,7 +22,7 @@
                          <i class="el-icon-caret-bottom"></i>
                     </span>
                     <el-dropdown-menu slot="dropdown">
-                        <el-dropdown-item divided  command="loginout">logout</el-dropdown-item>
+                        <el-dropdown-item divided  command="logout">Logout</el-dropdown-item>
                     </el-dropdown-menu>
                 </el-dropdown>
             </div>
@@ -44,10 +44,10 @@
         methods:{
             // 用户名下拉菜单选择事件
             handleCommand(command) {
-                if(command === 'loginout'){
+                if(command == 'logout'){
                     localStorage.removeItem('userId');
                     localStorage.removeItem('role');
-                    this.$router.push('/login');
+                    this.$router.push('/introduction');
                 }
             },
             // 侧边栏折叠
