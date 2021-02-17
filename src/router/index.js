@@ -146,7 +146,7 @@ export default new Router({
          */
         {
             path: '/introduction',
-            component: resolve => require(['../components/webpage/Introduction.vue'], resolve),
+            component: resolve => require(['../components/webpage/Introduction.vue'], resolve)
         },
         {
             path: '/login',

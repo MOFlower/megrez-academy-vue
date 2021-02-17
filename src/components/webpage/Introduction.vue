@@ -1,69 +1,133 @@
 <template>
   <div class="background">
-    <div class="title">
-      ABOUT us
-      <div class="text">
-        Mission： Michigan Youth Empowerment Foundation (mYe) is a 501(c3)
-        nonprofit foundation established to promote STEAM (Science, Technology,
-        Engineering, Arts, and Math) programs to students K-12 and empower them
-        to thrive in the new technological world.
-      </div>
-      <div class="image">
-        <img src="../../assets/img/logo.png" alt />
-      </div>
-    </div>
-    <div class="login-btn">
-      <el-button type="primary" @click="Jump">LOG IN / SIGN UP</el-button>
-    </div>
+    <el-container>
+      <el-header>
+        <el-row :gutter="20">
+          <el-col :span="3">
+            <img src="../../assets/img/logo.png" />
+          </el-col>
+          <el-col :span="12">
+            <img src="" alt="" />
+          </el-col>
+          <el-col :span="3">
+            <el-link @click="home">HOME</el-link>
+          </el-col>
+          <el-col :span="3">
+            <el-link href="https://myefound.org/">MYE</el-link>
+          </el-col>
+          <el-col :span="3">
+            <el-link @click="login">LOG IN</el-link>
+          </el-col>
+        </el-row>
+      </el-header>
+
+      <el-header> </el-header>
+      <el-header> </el-header>
+
+      <el-container>
+        <el-main>
+          <div class="courses_bg">
+            <h1 style="font-family: monaco; font-size: 30px">
+              popular courses
+            </h1>
+
+            <el-row :gutter="20">
+              <el-col :span="6">
+                <el-card :body-style="{ padding: '20px' }">
+                  <img src="../../assets/img/python.jpg" class="image" />
+                  <div class="courses_txt" style="padding: 10px">
+                    <span>courses</span>
+                  </div>
+                </el-card>
+              </el-col>
+              <el-col :span="6">
+                <el-card :body-style="{ padding: '20px' }">
+                  <img src="../../assets/img/python.jpg" class="image" />
+                  <div class="courses_txt" style="padding: 10px">
+                    <span>courses</span>
+                  </div>
+                </el-card>
+              </el-col>
+              <el-col :span="6">
+                <el-card :body-style="{ padding: '20px' }">
+                  <img src="../../assets/img/python.jpg" class="image" />
+                  <div class="courses_txt" style="padding: 10px">
+                    <span>courses</span>
+                  </div>
+                </el-card>
+              </el-col>
+              <el-col :span="6">
+                <el-card :body-style="{ padding: '20px' }">
+                  <img src="../../assets/img/python.jpg" class="image" />
+                  <div class="courses_txt" style="padding: 10px">
+                    <span>courses</span>
+                  </div>
+                </el-card>
+              </el-col>
+            </el-row>
+          </div>
+        </el-main>
+      </el-container>
+    </el-container>
   </div>
 </template>
 
 <script>
 export default {
   methods: {
-    Jump() {
-      this.$router.push("login");
+    home() {
+      this.$router.push("Introduction");
+    },
+    login() {
+      this.$router.push("Login");
     },
   },
 };
 </script>
 
-<style scoped>
-.title {
-  position: absolute;
-  left: 15%;
-  top: 5%;
-  font-family: serif;
-  font-weight: 700;
-  font-size: 100px;
-  color: saddlebrown;
-}
-.text {
-  position: relative;
-  top: 100px;
-  left: 60%;
-  width: 40%;
-  font-size: 35px;
-  color: chocolate;
-}
-.image {
-    position: relative;
-    top: -550px;
-    left: -200px;
-}
+<style lang="postcss" scoped>
 .background {
-  position: relative;
-  width: 100%;
-  height: 100%;
+  background-color: beige;
   background-image: url(../../assets/img/slider.jpg);
   background-size: 100%;
 }
-.login-btn button {
-  position: absolute;
-  top: 5%;
-  right: 5%;
-  width: 10%;
+.courses_bg {
+}
+.el-header {
+  text-align: right;
+  line-height: 100px;
+}
+.el-main {
+  height: 700px;
+}
+.el-aside {
+  height: 700px;
+}
+.el-link {
+  width: 120px;
   height: 50px;
-  margin-bottom: 200px;
+  background-color: rgba(211, 193, 145, 0.315);
+  font-size: 25px;
+}
+
+.image {
+  width: 100%;
+  display: block;
+}
+
+.el-carousel__item h3 {
+  color: #475669;
+  font-size: 14px;
+  opacity: 0.75;
+  line-height: 150px;
+  margin: 0;
+}
+
+.el-carousel__item:nth-child(2n) {
+  background-color: #99a9bf;
+}
+
+.el-carousel__item:nth-child(2n + 1) {
+  background-color: #d3dce6;
 }
 </style>
